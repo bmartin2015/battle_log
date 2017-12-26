@@ -1,5 +1,14 @@
 use Mix.Config
 
+# Configure Google OAuth
+config :ueberauth, Ueberauth,
+  providers: [
+    google: {Ueberauth.Strategy.Google, [default_scope: "emails profile plus.me"]}
+  ]
+config :ueberauth, Ueberauth.Strategy.Google.OAuth,
+  client_id: System.get_env("GOOGLE_CLIENT_ID"),
+  client_secret: System.get_env("GOOGLE_CLIENT_SECRET")
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
