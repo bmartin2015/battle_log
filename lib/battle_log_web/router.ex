@@ -19,6 +19,12 @@ defmodule BattleLogWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/auth", BattleLogWeb do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", BattleLogWeb do
   #   pipe_through :api
