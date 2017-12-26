@@ -23,6 +23,7 @@ defmodule BattleLogWeb.Router do
     pipe_through :browser
 
     get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :new
   end
 
   # Other scopes may use custom stacks.

@@ -1,6 +1,6 @@
 defmodule BattleLogWeb.AuthControllerTest do
   use BattleLogWeb.ConnCase
-  alias BattleLogWeb.{Repo, User}
+  alias BattleLog.{Repo, User}
 
   @ueberauth_auth %{credentials: %{token: "fdsnoafhnoofh08h38h"},
                     info: %{email: "batman@example.com", first_name: "Bruce", last_name: "Wayne"},
