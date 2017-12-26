@@ -8,11 +8,20 @@
       <li class="menu-text">Battle Log</li>
     </ul>
   </div>
-<div class="top-bar-right">
+  <div class="top-bar-right">
     <ul class="menu">
-      <li>
-        <a href="#">Sign in with Google</a>
-      </li>
+      <%= if @conn.assigns[:user] do %>
+        <li class="menu-text">
+          Welcome, <%= @conn.assigns.user.first_name %>!
+        </li>
+        <li>
+          <%= link "Sign out", to: auth_path(@conn, :delete), class: "button alert" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link "Sign in with Google", to: auth_path(@conn, :request, "google", scope: "email profile"), class: "button" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>

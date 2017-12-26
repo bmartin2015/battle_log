@@ -44,8 +44,8 @@ defmodule BattleLog.Mixfile do
       {:edeliver, "~> 1.4.2"},
       {:distillery, "~> 1.4"},
       {:ueberauth, "~> 0.4"},
-      {:ueberauth_google, "~> 0.7"}
-
+      {:ueberauth_google, "~> 0.7"},
+      {:ex_machina, "~> 2.1", only: :test}
     ]
   end
 
