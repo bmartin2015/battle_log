@@ -28,8 +28,8 @@ config :ueberauth, Ueberauth,
     google: {Ueberauth.Strategy.Google, [default_scope: "emails profile plus.me"]}
   ]
 config :ueberauth, Ueberauth.Strategy.Google.OAuth,
-  client_id: System.get_env("GOOGLE_CLIENT_ID"),
-  client_secret: System.get_env("GOOGLE_CLIENT_SECRET")
+  client_id: "${GITHUB_CLIENT_ID}",
+  client_secret: "${GITHUB_SECRET_ID}"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
