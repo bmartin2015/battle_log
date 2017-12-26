@@ -1,4 +1,5 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Battle Log" %></h2>
-  <p class="lead">Comming Soon</p>
+<div class="hero-section">
+  <div class="hero-section-text">
+    <h1>Welcome to Battle Log!</h1>
+  </div>
 </div>

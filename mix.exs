@@ -4,7 +4,7 @@ defmodule BattleLog.Mixfile do
   def project do
     [
       app: :battle_log,
-      version: "0.0.4",
+      version: "0.0.5",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -42,7 +42,10 @@ defmodule BattleLog.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:edeliver, "~> 1.4.2"},
-      {:distillery, "~> 1.4"}
+      {:distillery, "~> 1.4"},
+      {:ueberauth, "~> 0.4"},
+      {:ueberauth_google, "~> 0.7"},
+      {:ex_machina, "~> 2.1", only: :test}
     ]
   end
 

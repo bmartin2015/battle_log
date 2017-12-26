@@ -13,17 +13,10 @@
 
   <body>
     <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+      <%= render "_navigation.html", conn: @conn %>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <p class="callout primary flash-alert" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="callout alert flash-alert" role="alert"><%= get_flash(@conn, :error) %></p>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
@@ -31,5 +24,8 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
