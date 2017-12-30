@@ -21,7 +21,7 @@ defmodule BattleLogWeb.NavigationTest do
   test "shows a link to the workout index", %{conn: conn} do
     conn = get conn, "/"
 
-    assert html_response(conn, 200) =~ "<a href=\"workouts\">Workouts</a>"
+    assert html_response(conn, 200) =~ "<a href=\"/workouts\">Workouts</a>"
   end
 
   test "shows a link to add workout for a signed in user", %{conn: conn} do
@@ -31,6 +31,6 @@ defmodule BattleLogWeb.NavigationTest do
     |> assign(:user, user)
     |> get("/")
 
-    assert html_response(conn, 200) =~ "<a href=\"workouts/new\">Add Workouts</a>"
+    assert html_response(conn, 200) =~ "<a href=\"/workouts/new\">Add Workout</a>"
   end
 end
