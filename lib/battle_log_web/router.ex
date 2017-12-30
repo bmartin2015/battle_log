@@ -17,6 +17,7 @@ defmodule BattleLogWeb.Router do
   scope "/", BattleLogWeb do
     pipe_through :browser # Use the default browser stack
 
+    resources "/workouts", WorkoutController
     get "/", PageController, :index
   end
 

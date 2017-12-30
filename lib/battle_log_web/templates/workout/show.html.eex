@@ -1,0 +1,18 @@
+<h2>Show Workout</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @workout.name %>
+  </li>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @workout.date %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: workout_path(@conn, :edit, @workout) %></span>
+<span><%= link "Back", to: workout_path(@conn, :index) %></span>
