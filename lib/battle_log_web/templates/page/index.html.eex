@@ -1,5 +1,9 @@
-<div class="hero-section">
-  <div class="hero-section-text">
-    <h1>Welcome to Battle Log!</h1>
-  </div>
-</div>
+    <div class="mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Welcome to Battle Logs!</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        This is really just a site for me to play around with while learning Elixir, Phoenix, and MDL and various other technologies.
+      </div>
+    </div>
+

@@ -15,15 +15,11 @@
 
   <body>
     <%= render "_navigation.html", conn: @conn %>
-    <div class="mdl-layout__content">
-
+    <main role="main" class="page-content">
       <p class="callout primary flash-alert" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="callout alert flash-alert" role="alert"><%= get_flash(@conn, :error) %></p>
-
-      <main role="main" class="page-content">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-    </div>
+      <%= render @view_module, @view_template, assigns %>
+    </main>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
