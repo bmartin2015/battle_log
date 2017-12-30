@@ -1,36 +1,22 @@
-<div class="title-bar" data-responsive-toggle="my-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="my-menu"></button>
-  <div class="title-bar-title">Menu</div>
-</div>
-<div class="top-bar" id="my-menu">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text">Battle Log</li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <%= if @conn.assigns[:user] do %>
-        <li class="menu-text">
-          Welcome, <%= @conn.assigns.user.first_name %>!
-        </li>
-        <li>
-          <%= link "Add Workout", to: workout_path(@conn, :new) %>
-        </li>
-        <li>
-          <%= link "Workouts", to: workout_path(@conn, :index) %>
-        </li>
-        <li>
-          <%= link "Sign out", to: auth_path(@conn, :delete), class: "button alert" %>
-        </li>
-      <% else %>
-        <li>
-          <%= link "Workouts", to: workout_path(@conn, :index) %>
-        </li>
-        <li>
-          <%= link "Sign in with Google", to: auth_path(@conn, :request, "google", scope: "email profile"), class: "button" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Battle Log</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <%= if @conn.assigns[:user] do %>
+          <span class="mdl-navigation__link">Welcome, <%= @conn.assigns.user.first_name %>!</span>
+          <%= link "Add Workout", to: workout_path(@conn, :new), class: "mdl-navigation__link" %>
+          <%= link "Workouts", to: workout_path(@conn, :index), class: "mdl-navigation__link" %>
+          <%= link "Logout", to: auth_path(@conn, :delete), class: "mdl-navigation__link" %>
+        <% else %>
+          <%= link "Workouts", to: workout_path(@conn, :index), class: "mdl-navigation__link" %>
+          <%= link "Sign in with Google", to: auth_path(@conn, :request, "google", scope: "email profile"), class: "mdl-navigation__link" %>
+        <% end %>
+      </nav>
+    </div>
+  </header>
 </div>
